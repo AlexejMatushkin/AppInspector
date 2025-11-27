@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">App Inspector</string>
+
+    <!-- AppListFragment / Item -->
+    <string name="app_package_format">%s</string>
+
+    <!-- AppDetailsFragment -->
+    <string name="version_label">Версия: %s</string>
+    <string name="package_label">Пакет: %s</string>
+    <string name="checksum_label">SHA-1: %s</string>
+    <string name="open_app_button">Открыть приложение</string>
+    <string name="calculating_checksum">Вычисляется…</string>
 </resources>

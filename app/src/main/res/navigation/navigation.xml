@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation"
+    app:startDestination="@id/appListFragment">
+
+    <fragment
+        android:id="@+id/appListFragment"
+        android:name="com.practicum.appinspector.ui.app_list.AppListFragment"
+        android:label="Список приложений">
+        <action
+            android:id="@+id/openDetails"
+            app:destination="@id/appDetailsFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/appDetailsFragment"
+        android:name="com.practicum.appinspector.ui.app_details.AppDetailsFragment"
+        android:label="Информация">
+        <argument android:name="package" app:argType="string"/>
+    </fragment>
+</navigation>

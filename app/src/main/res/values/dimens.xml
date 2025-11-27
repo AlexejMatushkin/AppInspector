@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="padding_small">8dp</dimen>
+
+    <dimen name="padding_medium">12dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+    <dimen name="padding_xlarge">24dp</dimen>
+
+    <dimen name="corner_radius_button">12dp</dimen>
+
+    <dimen name="text_size_title">28sp</dimen>
+    <dimen name="text_size_large">18sp</dimen>
+    <dimen name="text_size_medium">16sp</dimen>
+    <dimen name="text_size_small">14sp</dimen>
+    <dimen name="text_size_tiny">12sp</dimen>
+
+    <dimen name="item_padding_vertical">12dp</dimen>
+    <dimen name="details_horizontal_padding">16dp</dimen>
+
+</resources>
