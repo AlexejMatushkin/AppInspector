@@ -66,6 +66,18 @@
                 android:text="@string/open_app_button"
                 app:cornerRadius="@dimen/corner_radius_button" />
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/deleteBtn"
+                style="@style/Widget.Material3.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/delete_app_button"
+                app:icon="@android:drawable/ic_menu_delete"
+                app:strokeColor="#FF5252"
+                app:iconTint="#FF5252"
+                android:textColor="#FF5252" />
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

@@ -1,12 +1,18 @@
 package com.practicum.appinspector.ui.app_details
 
+import android.content.Intent
+import android.content.pm.ApplicationInfo
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
+import android.widget.Toast
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.practicum.appinspector.R
 import com.practicum.appinspector.databinding.FragmentAppDetailsBinding
+import androidx.core.net.toUri
 
 class AppDetailsFragment : Fragment(R.layout.fragment_app_details) {
 
@@ -69,6 +75,48 @@ class AppDetailsFragment : Fragment(R.layout.fragment_app_details) {
                 if (intent != null) startActivity(intent)
             }
         }
+
+        binding.deleteBtn.apply {
+            text = getString(R.string.delete_app_button)
+            setTextColor(ContextCompat.getColor(requireContext(), R.color.delete_red))
+            strokeColor = ContextCompat.getColorStateList(requireContext(), R.color.delete_red)
+            iconTint = ContextCompat.getColorStateList(requireContext(), R.color.delete_red)
+
+            setOnClickListener {
+                val uninstallIntent = Intent(Intent.ACTION_DELETE).apply {
+                    data = Uri.parse("package:$packageName")
+                }
+                try {
+                    startActivity(uninstallIntent)
+                } catch (e: Exception) {
+                    Toast.makeText(
+                        requireContext(),
+                        getString(R.string.cannot_delete_toast),
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
+        }
+
+        try {
+            val appInfo = pm.getApplicationInfo(packageName, 0)
+            val isSystemApp = (appInfo.flags and ApplicationInfo.FLAG_SYSTEM) != 0
+
+            if (isSystemApp) {
+                binding.deleteBtn.apply {
+                    text = getString(R.string.system_app_cannot_delete)
+                    isEnabled = false
+                    alpha = 0.5f
+                    setTextColor(ContextCompat.getColor(requireContext(), R.color.delete_red_disabled))
+                    strokeColor = ContextCompat.getColorStateList(requireContext(), R.color.delete_red_disabled)
+                    iconTint = ContextCompat.getColorStateList(requireContext(), R.color.delete_red_disabled)
+                    setOnClickListener(null)
+                }
+            }
+        } catch (e: Exception) {
+            binding.deleteBtn.isEnabled = false
+        }
+
     }
 
     override fun onDestroyView() {

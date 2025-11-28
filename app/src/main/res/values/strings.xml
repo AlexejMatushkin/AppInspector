@@ -10,4 +10,7 @@
     <string name="checksum_label">SHA-1: %s</string>
     <string name="open_app_button">Открыть приложение</string>
     <string name="calculating_checksum">Вычисляется…</string>
+    <string name="delete_app_button">Удалить приложение</string>
+    <string name="system_app_cannot_delete">Системное приложение</string>
+    <string name="cannot_delete_toast">Не удалось удалить приложение</string>
 </resources>
