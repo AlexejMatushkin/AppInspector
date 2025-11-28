@@ -28,7 +28,7 @@
 - **Jetpack Navigation Component**
 - **ViewModel + LiveData**
 - **View Binding**
-- **Material 3** (`com.google.android.material:material:1.12+`)
+- **Material 3** (`com.google.android.material:material:1.13.0+`)
 - **minSdk 24** — Android 7.0 Nougat и выше
 
 > Работает идеально на Android 7.0 → 15
